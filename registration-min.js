@@ -297,24 +297,24 @@ async function submit() {
         submitFormEndPoint = `https://api.simpo.ai/crm/registration/?enquiryId=${payload?.enquiryId || ''}`
     }
 
-    // try{
-    //     const response = await fetch(submitFormEndPoint, {
-    //         method: 'POST',
-    //         headers: {
-    //             'Content-Type': 'application/json',
-    //         },
-    //         body: JSON.stringify(payload),
-    //     });
-    //     if (!response.ok) {
-    //         throw new Error('Network response was not ok');
-    //     }
+    try{
+        const response = await fetch(submitFormEndPoint, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(payload),
+        });
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
 
-    //     const data = await response.json();
+        const data = await response.json();
         openPopup('SUCCESS')
-    // }
-    // catch (error){
-        // openPopup('FAILED')
-    // }
+    }
+    catch (error){
+        openPopup('FAILED')
+    }
 }
 
 function openPopup(ev) {
