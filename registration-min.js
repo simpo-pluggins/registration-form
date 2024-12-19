@@ -28,10 +28,10 @@ class registrationMini {
 function getSuccessTemplateValues(){
     let fetchUrl;
     if(env === 'PRE-PROD'){
-        fetchUrl = `https://dev-api.simpo.ai/crm/templates?status=true&formCategory=REGISTRATION&pageNo=0&size=20`
+        fetchUrl = `https://dev-api.simpo.ai/crm/templates?businessId=${bId}&status=true&formCategory=REGISTRATION`
     }
     else if(env === 'PROD'){
-        fetchUrl = `https://api.simpo.ai/crm/templates?status=true&formCategory=REGISTRATION&pageNo=0&size=20`
+        fetchUrl = `https://api.simpo.ai/crm/templates?businessId=${bId}&status=true&formCategory=REGISTRATION`
     }
     fetch(fetchUrl)
     .then(response => {
