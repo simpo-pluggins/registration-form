@@ -16,7 +16,7 @@ class getRegistrationForm{
                 const name = encodeURIComponent(accessKey.split('=')[1])
                 if (!enquiryId) return;
                 enquiryId.innerHTML += `
-                <iframe id="myHtml" src="index.html?ff=${encodedFontFamily}&denv=${dataId}&bId=${bId}&name=${name}" style="width:100%;height:calc(100vh - 20px);border:none;"></iframe>
+                <iframe id="myHtml" src="https://simpo-pluggins.github.io/registration-form/index.html?ff=${encodedFontFamily}&denv=${dataId}&bId=${bId}&name=${name}" style="width:100%;height:calc(100vh - 20px);border:none;"></iframe>
                 `
             }
         }
